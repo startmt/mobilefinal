@@ -2,4 +2,7 @@
     <string name="app_name">mobilefinal</string>
     <string name="login_userId">User Id</string>
     <string name="login_userPassword">Password</string>
+    <string name="login_userRegister">Register New Account</string>
+    <string name="user_userName">Name</string>
+    <string name="user_userAge">Age</string>
 </resources>

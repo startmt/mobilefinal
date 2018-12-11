@@ -13,26 +13,36 @@
             android:orientation="vertical"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/fb"
-                android:layout_gravity="center"
-                />
             <EditText
-                android:id="@+id/login_user_email"
                 android:drawableLeft="@drawable/ic_action_user"
-                android:hint="@string/login_userId"
                 android:inputType="text"
+                android:id="@+id/regis_user_userId"
+                android:hint="@string/login_userId"
                 android:layout_width="match_parent"
                 android:layout_marginTop="15dp"
                 android:layout_height="wrap_content"
                 />
             <EditText
-                android:id="@+id/login_user_password"
+                android:drawableLeft="@drawable/ic_action_name"
+                android:inputType="text"
+                android:id="@+id/regis_user_name"
+                android:hint="@string/user_userName"
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+                />
+            <EditText
+                android:drawableLeft="@drawable/ic_action_date"
+                android:inputType="number"
+                android:id="@+id/regis_user_age"
+                android:hint="@string/user_userAge"
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+                />
+            <EditText
                 android:drawableLeft="@drawable/ic_action_password"
+                android:id="@+id/regis_user_password"
                 android:inputType="textPassword"
                 android:hint="@string/login_userPassword"
                 android:layout_width="match_parent"
@@ -41,19 +51,10 @@
                 />
 
             <Button
-                android:text="Login"
+                android:text="Register New Account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button_login" />
-
-            <TextView
-                android:textColor="@color/colorPrimary"
-                android:text="@string/login_userRegister"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:id="@+id/login_text_register" />
-
+                android:id="@+id/button_register" />
 
         </LinearLayout>
     </ScrollView>
