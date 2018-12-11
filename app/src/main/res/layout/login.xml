@@ -22,7 +22,7 @@
                 android:layout_gravity="center"
                 />
             <EditText
-                android:id="@+id/login_user_email"
+                android:id="@+id/login_user_id"
                 android:drawableLeft="@drawable/ic_action_user"
                 android:hint="@string/login_userId"
                 android:inputType="text"
