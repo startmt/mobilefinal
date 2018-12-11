@@ -73,7 +73,7 @@ public class LoginFragment extends Fragment {
                         dbName = myCur.getString(2);
                         dbPassword = myCur.getString(4);
                     }
-                    if(!dbPassword.equals(userPasswordStr)){
+                    if(!dbPassword.equals(userPasswordStr) || dbPassword.equals(null)){
                         Toast.makeText(getActivity(), "Invalid user or password", Toast.LENGTH_SHORT).show();
                     }
                     else {

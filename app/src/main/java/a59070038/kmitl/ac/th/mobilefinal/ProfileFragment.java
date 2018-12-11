@@ -18,6 +18,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class ProfileFragment extends Fragment {
     private String name;
     private String id;
@@ -119,6 +123,21 @@ public class ProfileFragment extends Fragment {
         SQLiteDatabase db = getActivity().openOrCreateDatabase("my.db", Context.MODE_PRIVATE, null);
         db.update("user", row, "_id = " + _id, null);
         db.close();
+        String path = ".";
+        File file = new File(path);
+        FileWriter writer;
+        try {
+            writer = new FileWriter(file, false);
+            writer.write(userQoute);
+            writer.close();
+
+            System.out.println("Write success!");
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
         SharedPreferences sp = getActivity().getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.putString("quote", userQoute);

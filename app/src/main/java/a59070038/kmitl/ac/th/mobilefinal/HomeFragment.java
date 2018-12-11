@@ -41,7 +41,7 @@ public class HomeFragment extends Fragment {
         Button friendBtn = getView().findViewById(R.id.home_friend);
         Button signoutBtn = getView().findViewById(R.id.home_signout);
         profileSetup(profileBtn);
-
+        friend(friendBtn);
         signout(signoutBtn);
     }
     public void profileSetup(Button profileBtn){
@@ -57,11 +57,33 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+    public void friend(Button friendBtn){
+        friendBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_view, new PostFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+    }
     public void signout(Button sigoutBtn){
         sigoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                SharedPreferences sp = getActivity().getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.remove("name");
+                editor.remove("id");
+                editor.commit();
+                getActivity()
+                .getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.main_view, new LoginFragment())
+                .commit();
             }
         });
     }
