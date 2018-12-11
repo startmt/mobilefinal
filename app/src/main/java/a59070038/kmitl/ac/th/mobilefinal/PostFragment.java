@@ -63,14 +63,15 @@ public class PostFragment extends Fragment {
         postList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Fragment commentFragment = new CommentFragment();
-//                Bundle args = new Bundle();
-//                args.putString("postId", String.valueOf(post.get(position).getId()));
-//                commentFragment.setArguments(args);
-//                getActivity()
-//                        .getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.main_view, commentFragment).addToBackStack(null).commit();
+                Fragment friend = new FriendFragment();
+                Bundle args = new Bundle();
+                args.putString("id", String.valueOf(post.get(position).getId()));
+                args.putString("name", String.valueOf(post.get(position).getUsername()));
+                friend.setArguments(args);
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_view, friend).addToBackStack(null).commit();
             }
         });
         initbackButton();
