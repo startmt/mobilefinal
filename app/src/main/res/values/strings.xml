@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">mobilefinal</string>
+    <string name="login_userId">User Id</string>
+    <string name="login_userPassword">Password</string>
 </resources>
