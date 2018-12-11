@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class HomeFragment extends Fragment {
@@ -32,5 +33,36 @@ public class HomeFragment extends Fragment {
         TextView textName = getView().findViewById(R.id.home_name);
         TextView textQuote = getView().findViewById(R.id.home_quote);
         textName.setText("Hello, " +  name);
+        textQuote.setText(quote);
+        initButton();
+    }
+    public void initButton(){
+        Button profileBtn = getView().findViewById(R.id.home_profile_setup);
+        Button friendBtn = getView().findViewById(R.id.home_friend);
+        Button signoutBtn = getView().findViewById(R.id.home_signout);
+        profileSetup(profileBtn);
+
+        signout(signoutBtn);
+    }
+    public void profileSetup(Button profileBtn){
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_view, new ProfileFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+    }
+    public void signout(Button sigoutBtn){
+        sigoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
+            }
+        });
     }
 }
